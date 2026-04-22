@@ -10,7 +10,11 @@ if escolha == "Paracetamol 40 mg/mL":
     st.subheader ("Paracetamol 40 mg/mL")
     st.write ("Dose máxima 60 mg/kg/dia")
     peso = st.number_input ( "Peso (Kg):")
-    tomas = st.radio ("Nº de tomas por dia:", ["3 (8H/8H)", "4 (6H/6H)"])
+    tomas_texto = st.radio ("Nº de tomas por dia:", ["3 (8H/8H)", "4 (6H/6H)"])
+    if "3 (8H/8H)" in tomas_texto:
+        tomas = 3
+    if "4 (6H/6H)" in tomas_texto:
+        tomas = 4
     if peso > 0:
         dose = (1.5 * peso) / tomas
         st.divider()
@@ -20,7 +24,11 @@ if escolha == "Ibuprofeno 20mg/mL":
     st.subheader ("Ibuprofeno 20mg/mL")
     st.write ("Dose máxima diária 30 mg/kg")
     peso = st.number_input ("Peso(Kg):")
-    tomas = st.radio ("Nº de tomas por dia:", ["3 (8H/8H)", "4 (6H/6H)"])
+    tomas_texto = st.radio ("Nº de tomas por dia:", ["3 (8H/8H)", "4 (6H/6H)"])
+    if "3 (8H/8H)" in tomas_texto:
+        tomas = 3
+    if "4 (6H/6H)" in tomas_texto:
+        tomas = 4
     if peso > 0:
         dose = (1.5 * peso)/ tomas
         st.divider ()
