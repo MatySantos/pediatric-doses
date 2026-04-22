@@ -20,7 +20,7 @@ if escolha == "Paracetamol 40 mg/mL":
         st.divider()
         st.metric(label="Volume a tomar (mL)", value = f"{dose} mL" )
 #ibuprofeno 20mg/mL
-if escolha == "Ibuprofeno 20mg/mL":
+elif escolha == "Ibuprofeno 20mg/mL":
     st.subheader ("Ibuprofeno 20mg/mL")
     st.write ("Dose máxima diária 30 mg/kg")
     peso = st.number_input ("Peso(Kg):")
