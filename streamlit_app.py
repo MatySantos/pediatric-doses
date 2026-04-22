@@ -12,5 +12,5 @@ if escolha == "Paracetamol 40 mg/mL":
     tomas = st.radio ("Nº de tomas por dia:", [3, 4])
     if peso > 0:
         dose = (1.5 * peso) / tomas
-    st.divider()
-    st.metric(label="Volume a tomar (mL)", value = f"{dose} mL" )
+        st.divider()
+        st.metric(label="Volume a tomar (mL)", value = f"{dose} mL" )
