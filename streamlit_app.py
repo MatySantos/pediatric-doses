@@ -55,8 +55,8 @@ elif escolha == "Amoxicilina + Ác. Clavulanico 250/64.5":
     dose = (1.2 * peso)/2 
     if peso > 0 and peso < 40:
         st.divider ()
-        st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
-    elif peso >= 40:
+        st.metric (label= "Volume a tomar (mL), 2x ao dia", value = f"{dose} mL" )
+    elif peso > 40:
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
     if dose * 14 > 100:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
