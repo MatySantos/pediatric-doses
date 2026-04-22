@@ -9,7 +9,7 @@ if escolha == "Paracetamol 40 mg/mL":
     st.subheader ("Paracetamol 40 mg/mL")
     st.write ("Dose máxima 60 mg/kg/dia")
     peso = st.number_input ( "Peso (Kg):")
-    tomas = st.radio ("Nº de tomas por dia:" [3, 4])
+    tomas = st.radio ("Nº de tomas por dia:", [3, 4])
     if peso > 0:
         dose = (1.5 * peso) / tomas
     st.divider()
