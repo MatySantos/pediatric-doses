@@ -6,6 +6,11 @@ escolha = st.selectbox("Selecione o Medicamento:", ["Paracetamol 40 mg/mL", "Ibu
 
 #2 Lógica específica de cada um 
 if "Selecione o medicamento:" == "Paracetamol 40 mg/mL":
-    st.subheader ("Dose máxima 60 mg/kg/dia")
-    #peso = st.number_input (...)
-    #tomas = st.radio (("Nº de tomas por dia:") [3, 4])
+    st.subheader ("Paracetamol 40 mg/mL")
+    st.write ("Dose máxima 60 mg/kg/dia")
+    peso = st.number_input ( "Peso (Kg):")
+    tomas = st.radio (("Nº de tomas por dia:") [3, 4])
+    if peso > 0:
+        dose = (1.5 * peso) / tomas
+    st.divider()
+    st.metric(label="Volume a tomar (mL)", value = f"{dose} mL" )
