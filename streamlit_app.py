@@ -5,11 +5,11 @@ st.title("Calculadora Doses Pediátricas")
 escolha = st.selectbox("Selecione o Medicamento:", ["Paracetamol 40 mg/mL", "Ibuprofeno 20 mg/mL","Ibuprofeno 40mg/mL", "Amoxicilina + Ác. Clavulanico 250/64.5", "Amoxicilina + Ác.Clavulanico 400/57", "Amoxicilina + Ác.Clavulanico 600/42.9", "Azitromicina 40 mg/mL"])
 
 #2 Lógica específica de cada um 
-if "Selecione o medicamento:" == "Paracetamol 40 mg/mL":
+if escolha == "Paracetamol 40 mg/mL":
     st.subheader ("Paracetamol 40 mg/mL")
     st.write ("Dose máxima 60 mg/kg/dia")
     peso = st.number_input ( "Peso (Kg):")
-    tomas = st.radio (("Nº de tomas por dia:") [3, 4])
+    tomas = st.radio ("Nº de tomas por dia:" [3, 4])
     if peso > 0:
         dose = (1.5 * peso) / tomas
     st.divider()
