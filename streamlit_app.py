@@ -33,3 +33,18 @@ elif escolha == "Ibuprofeno 20 mg/mL":
         dose = (1.5 * peso)/ tomas
         st.divider ()
         st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
+#Ibuprofeno 40mg/mL
+elif escolha == "Ibuprofeno 40mg/mL":
+    st.subheader ("Ibuprofeno 40mg/mL")
+    st.write ("Dose máxima diária 30 mg/Kg")
+    peso = st.number_input ("Peso (Kg):")
+    tomas_texto = st.radio ("Nº de tomas por dia:", ["3 (8H/8H)", "4 (6H/6H)"] )
+    if "3 (8H/8H)" in tomas_texto:
+        tomas = 3
+    if "4 (6H/6H)" in tomas_texto:
+        tomas = 4
+    if peso > 0:
+        dose = (0.75 * peso)/ tomas
+        st-divider ()
+        st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
+        
