@@ -2,7 +2,7 @@ import streamlit as st
 st.set_page_config(page_title="Guia de Doses Pediátricas", layout="centered")
 st.title("Calculadora Doses Pediátricas")
 # 1. Escolha do Medicamento primeiro
-escolha = st.selectbox("Selecione o Medicamento:", ["Selecione o Medicamento", "Paracetamol 40 mg/mL", "Ibuprofeno 20 mg/mL","Ibuprofeno 40mg/mL", "Amoxicilina + Ác. Clavulanico 250/64.5", "Amoxicilina + Ác.Clavulanico 400/57", "Amoxicilina + Ác.Clavulanico 600/42.9", "Azitromicina 40 mg/mL"])
+escolha = st.selectbox("Selecione o Medicamento:", ["Selecione o Medicamento", "Paracetamol 40 mg/mL", "Ibuprofeno 20 mg/mL","Ibuprofeno 40mg/mL", "Amoxicilina + Ác. Clavulanico 250/62.5", "Amoxicilina + Ác.Clavulanico 400/57", "Amoxicilina + Ác.Clavulanico 600/42.9", "Azitromicina 40 mg/mL"])
 
 #2 Lógica específica de cada um 
 #Paracetamol 40mg/mL
@@ -47,17 +47,32 @@ elif escolha == "Ibuprofeno 40mg/mL":
         dose = (0.75 * peso)/ tomas
         st.divider ()
         st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
-# Amoxicilina + Ác. Clavulanico 250/64.5
-elif escolha == "Amoxicilina + Ác. Clavulanico 250/64.5":
-    st.subheader ("Amoxicilina + Ác. Clavulanico 250/64.5")
+# Amoxicilina + Ác. Clavulanico 250/62.5
+elif escolha == "Amoxicilina + Ác. Clavulanico 250/62.5":
+    st.subheader ("Amoxicilina + Ác. Clavulanico 250/62.5")
+    st.write ("Clavamox 250")
     st.write ("Dose máxima diária 60/15 mg/Kg")
     peso = st.number_input ("Peso (Kg):")
     dose = (1.2 * peso)/2 
     if peso > 0 and peso < 40:
         st.divider ()
-        st.metric (label= "Volume a tomar (mL), 2x ao dia", value = f"{dose} mL" )
+        st.metric (label= "Volume a tomar (mL), 12 em 12 horas", value = f"{dose} mL" )
     elif peso > 40:
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
-    if dose * 14 > 100:
+    if dose * 14 > 100 and peso < 40:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
-        
+# Amoxicilina + Ác. Clavulanico 400/57
+elif escolha == "Amoxicilina + Ác.Clavulanico 400/57":
+    st.subheader ("Amoxicilina + Ác.Clavulanico 400/57") 
+    st.write ("Clavamox DT 400")
+    st.write ("Dose máxima diária 45/ 6.4 mg/Kg") 
+    peso = st.number_input ("Peso(Kg)")
+    dose = (9*peso) / 32
+    if peso > 0 and peso < 40: 
+        st.divider ()
+        st.metric (label = "Volume a tomar (mL), 12 em 12 horas", value = f"{dose} mL" )
+    elif peso > 40:
+        st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
+    if dose * 14 > 100 and peso < 40:
+        st.write ("Dose acima de 100 mL, necessários dois frascos.")
+
