@@ -97,7 +97,7 @@ elif escolha == ("Azitromicina 40 mg/mL"):
     if peso > 0 and peso < 45:
         st.divider ()
         st.metric (label = " Volume a tomar (mL), uma vez por dia", value = f"{dose} mL" )
-    elif peso > 0 and peso < 15:
+    if peso > 0 and peso < 15:
         st.write ("Medir dose tão rigorosamente quanto possível")
     elif peso > 45:
         st.write ("Peso acima de 45 Kg, dose de adulto: comprimidos. Consultar médico")
