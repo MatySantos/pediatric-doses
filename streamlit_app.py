@@ -88,3 +88,16 @@ elif escolha == "Amoxicilina + Ác.Clavulanico 600/42.9":
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
     if dose * 14 > 100 and peso < 40:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
+elif escolha == ("Azitromicina 40 mg/mL"):
+    st.subheader ("Azitromicina 40 mg/mL")
+    st.write ("Zithromax")
+    st.write ("Dose máxima diária 10 mg/ Kg, durante 3 dias")
+    peso = st.number_input ("Peso (kg)")
+    dose = (peso/ 4)
+    if peso > 0 and peso < 45:
+        st.divider ()
+        st.metric (label = " Volume a tomar (mL), uma vez por dia", value = f"{dose} mL" )
+    elif peso < 15:
+        st.write ("Medir dose tão rigorosamente quanto possível")
+    elif peso > 45:
+        st.write ("Peso acima de 45 Kg, dose de adulto: comprimidos. Consultar médico")
