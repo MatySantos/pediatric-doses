@@ -18,7 +18,7 @@ if escolha == "Paracetamol 40 mg/mL":
     if peso > 0:
         dose = (1.5 * peso) / tomas
         st.divider()
-        st.metric(label="Volume a tomar (mL)", value = f"{dose} mL" )
+        st.metric(label="Volume a tomar (mL)", value =f"{dose: .2f} mL" )
 #ibuprofeno 20mg/mL
 elif escolha == "Ibuprofeno 20 mg/mL":
     st.subheader ("Ibuprofeno 20mg/mL")
@@ -32,7 +32,7 @@ elif escolha == "Ibuprofeno 20 mg/mL":
     if peso > 0:
         dose = (1.5 * peso)/ tomas
         st.divider ()
-        st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
+        st.metric (label= "Volume a tomar (mL)", value = f"{dose: .2f} mL" )
 #Ibuprofeno 40mg/mL
 elif escolha == "Ibuprofeno 40mg/mL":
     st.subheader ("Ibuprofeno 40mg/mL")
@@ -46,7 +46,7 @@ elif escolha == "Ibuprofeno 40mg/mL":
     if peso > 0:
         dose = (0.75 * peso)/ tomas
         st.divider ()
-        st.metric (label= "Volume a tomar (mL)", value = f"{dose} mL" )
+        st.metric (label= "Volume a tomar (mL)", value = f"{dose: .2f} mL" )
 # Amoxicilina + Ác. Clavulanico 250/62.5
 elif escolha == "Amoxicilina + Ác. Clavulanico 250/62.5":
     st.subheader ("Amoxicilina + Ác. Clavulanico 250/62.5")
@@ -54,12 +54,12 @@ elif escolha == "Amoxicilina + Ác. Clavulanico 250/62.5":
     st.write ("Dose máxima diária 60/15 mg/Kg")
     peso = st.number_input ("Peso (Kg):")
     dose = (1.2 * peso)/2 
-    if peso > 0 and peso < 40:
+    if peso > 0 and peso <= 40:
         st.divider ()
-        st.metric (label= "Volume a tomar (mL), 12 em 12 horas", value = f"{dose} mL" )
-    elif peso > 40:
+        st.metric (label= "Volume a tomar (mL), 12 em 12 horas", value = f"{dose: .2f} mL" )
+    elif peso >= 40:
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
-    if dose * 14 > 100 and peso < 40:
+    if dose * 14 > 100 and peso <= 40:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
 # Amoxicilina + Ác. Clavulanico 400/57
 elif escolha == "Amoxicilina + Ác.Clavulanico 400/57":
@@ -68,12 +68,12 @@ elif escolha == "Amoxicilina + Ác.Clavulanico 400/57":
     st.write ("Dose máxima diária 45/ 6.4 mg/Kg") 
     peso = st.number_input ("Peso(Kg)")
     dose = (9*peso) / 32
-    if peso > 0 and peso < 40: 
+    if peso > 0 and peso <= 40: 
         st.divider ()
-        st.metric (label = "Volume a tomar (mL), 12 em 12 horas", value = f"{dose} mL" )
-    elif peso > 40:
+        st.metric (label = "Volume a tomar (mL), 12 em 12 horas", value = f"{dose: .2f} mL" )
+    elif peso >= 40:
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
-    if dose * 14 > 100 and peso < 40:
+    if dose * 14 > 100 and peso <= 40:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
 elif escolha == "Amoxicilina + Ác.Clavulanico 600/42.9":
     st.subheader ("Amoxicilina + Ác.Clavulanico 600/42.9")
@@ -81,12 +81,12 @@ elif escolha == "Amoxicilina + Ác.Clavulanico 600/42.9":
     st.write ("Dose máxima diária 90/6.4 mg/Kg")
     peso = st.number_input ("Peso (Kg)")
     dose = (0.75 * peso) / 2
-    if peso > 0 and peso < 40: 
+    if peso > 0 and peso <= 40: 
         st.divider ()
-        st.metric (label = "Volume a tomar (mL), 12 em 12 horas", value = f"{dose} mL" )
-    elif peso > 40:
+        st.metric (label = "Volume a tomar (mL), 12 em 12 horas", value = f"{dose: .2f} mL" )
+    elif peso >= 40:
         st.write ("Peso acima de 40 Kg, dose de adulto: comprimidos. Consultar médico")
-    if dose * 14 > 100 and peso < 40:
+    if dose * 14 > 100 and peso <= 40:
         st.write ("Dose acima de 100 mL, necessários dois frascos.")
 elif escolha == ("Azitromicina 40 mg/mL"):
     st.subheader ("Azitromicina 40 mg/mL")
@@ -94,10 +94,10 @@ elif escolha == ("Azitromicina 40 mg/mL"):
     st.write ("Dose máxima diária 10 mg/ Kg, durante 3 dias")
     peso = st.number_input ("Peso (kg)")
     dose = (peso/ 4)
-    if peso > 0 and peso < 45:
+    if peso > 0 and peso <= 45:
         st.divider ()
-        st.metric (label = " Volume a tomar (mL), uma vez por dia", value = f"{dose} mL" )
-    if peso > 0 and peso < 15:
+        st.metric (label = " Volume a tomar (mL), uma vez por dia", value = f"{dose: .2f} mL" )
+    if peso > 0 and peso <= 15:
         st.write ("Medir dose tão rigorosamente quanto possível")
-    elif peso > 45:
+    elif peso >= 45:
         st.write ("Peso acima de 45 Kg, dose de adulto: comprimidos. Consultar médico")
