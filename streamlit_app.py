@@ -103,5 +103,5 @@ elif escolha == ("Azitromicina 40 mg/mL"):
         st.write ("Peso acima de 45 Kg, dose de adulto: comprimidos. Consultar médico")
     if dose * 3 > 15:
         st.write ("Necessário frasco de 30 mL ou 2 de 15 mL")
-    if dose * 3 <= 15:
+    if dose * 3 <= 15 and dose > 0:
         st.write ("Frasco de 15 mL é suficiente")
